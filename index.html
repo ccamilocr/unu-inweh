@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristian Camilo Castañeda – UNU-INWEH Application</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1628;--navy-mid:#132240;--teal:#00B4A0;--teal-pale:#E0F7F5;--teal-dark:#007A6E;--amber:#F5A623;--amber-pale:#FFF4E0;--amber-dark:#C47D0E;--green:#1A7F4B;--green-pale:#E6FAF0;--purple:#5B42CC;--purple-pale:#F0EEFF;--slate:#3D5166;--slate-pale:#F0F4F8;--rose:#C4163F;--rose-pale:#FFF0F3;--text:#0A1628;--text-muted:#4A5568;--text-light:#718096;--border:#E2E8F0;--surface:#FAFAFA;--white:#FFFFFF;--radius:12px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.6;overflow-x:hidden;}
+.hero{background:var(--navy);color:white;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-140px;right:-140px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(0,180,160,0.12);}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:380px;height:380px;border-radius:50%;border:1px solid rgba(245,166,35,0.1);}
+.hero-inner{max-width:980px;margin:0 auto;padding:72px 40px 64px;position:relative;z-index:1;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,160,0.15);border:1px solid rgba(0,180,160,0.3);border-radius:100px;padding:6px 16px;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#00E5CE;margin-bottom:28px;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00E5CE;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,58px);line-height:1.08;font-weight:400;margin-bottom:14px;}
+.hero h1 em{font-style:italic;color:#00E5CE;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.6);margin-bottom:36px;font-weight:300;max-width:580px;line-height:1.65;}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-bottom:36px;padding:22px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);}
+.hstat{display:flex;flex-direction:column;gap:3px;}
+.hstat-num{font-family:'DM Serif Display',serif;font-size:28px;color:#00E5CE;line-height:1;}
+.hstat-lbl{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.05em;max-width:130px;line-height:1.35;}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;}
+.hm-item{display:flex;flex-direction:column;gap:2px;}
+.hm-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);}
+.hm-val{font-size:13px;color:rgba(255,255,255,.8);font-weight:500;}
+.hero-links{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap;}
+.btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:var(--navy);padding:11px 22px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none;transition:opacity .15s;}
+.btn-p:hover{opacity:.85;}
+.btn-o{display:inline-flex;align-items:center;gap:7px;background:transparent;color:white;padding:11px 22px;border-radius:8px;font-weight:500;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,.22);transition:all .15s;}
+.btn-o:hover{border-color:rgba(255,255,255,.48);background:rgba(255,255,255,.05);}
+.nav-sticky{position:sticky;top:0;z-index:100;background:rgba(10,22,40,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07);}
+.nav-inner{max-width:980px;margin:0 auto;padding:0 40px;display:flex;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-item{display:flex;align-items:center;gap:6px;padding:13px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;cursor:pointer;}
+.nav-item:hover{color:rgba(255,255,255,.85);}
+.nav-item.active{color:#00E5CE;border-bottom-color:#00E5CE;}
+.nav-num{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:rgba(0,180,160,.18);color:#00E5CE;font-size:9px;font-family:'DM Mono',monospace;}
+.main{max-width:980px;margin:0 auto;padding:0 40px 80px;}
+.section{padding:62px 0 0;scroll-margin-top:52px;}
+.section-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:34px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.sec-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.si-teal{background:var(--teal-pale);color:var(--teal-dark);}
+.si-amber{background:var(--amber-pale);color:var(--amber-dark);}
+.si-navy{background:#EEF2FF;color:var(--navy);}
+.si-green{background:var(--green-pale);color:var(--green);}
+.si-purple{background:var(--purple-pale);color:var(--purple);}
+.si-rose{background:var(--rose-pale);color:var(--rose);}
+.si-slate{background:var(--slate-pale);color:var(--slate);}
+.sec-wrap{flex:1;}
+.sec-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-light);letter-spacing:.1em;margin-bottom:3px;}
+.sec-title{font-family:'DM Serif Display',serif;font-size:25px;font-weight:400;color:var(--text);line-height:1.2;}
+.sec-desc{font-size:13px;color:var(--text-muted);margin-top:4px;}
+.impact-bar{background:var(--navy);border-radius:var(--radius);padding:20px 24px;margin-bottom:20px;display:flex;gap:32px;flex-wrap:wrap;}
+.imp-item{display:flex;flex-direction:column;gap:2px;}
+.imp-num{font-family:'DM Serif Display',serif;font-size:26px;color:#00E5CE;line-height:1;}
+.imp-lbl{font-size:11px;color:rgba(255,255,255,.45);max-width:150px;line-height:1.35;}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;transition:box-shadow .2s,border-color .2s;}
+.pcard:hover{box-shadow:0 4px 22px rgba(0,0,0,.06);border-color:#CBD5E0;}
+.pcard-head{padding:22px 26px 0;}
+.pcard-body{padding:14px 26px 22px;}
+.badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.04em;}
+.b-teal{background:var(--teal-pale);color:var(--teal-dark);}
+.b-amber{background:var(--amber-pale);color:var(--amber-dark);}
+.b-navy{background:#EEF2FF;color:var(--navy);}
+.b-green{background:var(--green-pale);color:var(--green);}
+.b-purple{background:var(--purple-pale);color:var(--purple);}
+.b-rose{background:var(--rose-pale);color:var(--rose);}
+.b-slate{background:var(--slate-pale);color:var(--slate);}
+.b-live{background:#D1FAE5;color:#065F46;}
+.pcard-title{font-family:'DM Serif Display',serif;font-size:19px;font-weight:400;color:var(--text);margin-bottom:5px;}
+.pcard-org{font-size:12px;color:var(--text-muted);margin-bottom:0;}
+.pcard-desc{font-size:13.5px;color:var(--text-muted);margin-bottom:16px;line-height:1.65;}
+.hq{background:#F0FDF9;border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:16px;}
+.hq-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal-dark);font-weight:600;margin-bottom:5px;}
+.hq p{font-size:13.5px;color:var(--text);line-height:1.65;font-style:italic;}
+.hq p strong{font-style:normal;font-weight:600;}
+.role-block{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 15px;margin-bottom:15px;}
+.role-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);margin-bottom:3px;}
+.role-txt{font-size:13.5px;color:var(--text);font-weight:500;}
+.bullets{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.bullets li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--text-muted);line-height:1.5;}
+.bullets li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px;}
+.tech-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
+.tech-tag{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:11px;font-family:'DM Mono',monospace;color:var(--text-muted);}
+.links-row{display:flex;gap:8px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border);}
+.lbtn{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:6px;font-size:12px;font-weight:500;text-decoration:none;transition:all .15s;}
+.lbtn-p{background:var(--navy);color:white;}
+.lbtn-p:hover{background:var(--navy-mid);}
+.lbtn-g{background:var(--surface);color:var(--text);border:1px solid var(--border);}
+.lbtn-g:hover{background:#EDF2F7;}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px;margin-bottom:16px;}
+.dcell{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:15px;}
+.dcell-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
+.ddot{width:6px;height:6px;border-radius:50%;}
+.dt{background:var(--teal);}
+.da{background:var(--amber);}
+.dn{background:var(--navy);}
+.dg{background:var(--green);}
+.dp{background:var(--purple);}
+.dcell p{font-size:12px;color:var(--text-muted);line-height:1.55;}
+.code-block{background:var(--navy);border-radius:9px;padding:17px 21px;margin-bottom:16px;overflow-x:auto;}
+.code-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.28);margin-bottom:9px;font-family:'DM Mono',monospace;}
+.code-block pre{font-family:'DM Mono',monospace;font-size:12px;line-height:1.7;color:rgba(255,255,255,.8);}
+.cc{color:rgba(0,229,206,.45);}
+.ck{color:#00E5CE;}
+.cv{color:#F5A623;}
+.cs{color:#A8D8A8;}
+.arch{display:flex;flex-wrap:wrap;gap:8px;padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:16px;align-items:flex-start;}
+.arch-node{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;min-width:80px;}
+.arch-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.arch-icon svg{width:19px;height:19px;}
+.ai-t{background:var(--teal-pale);}
+.ai-a{background:var(--amber-pale);}
+.ai-n{background:#EEF2FF;}
+.ai-g{background:var(--green-pale);}
+.ai-p{background:var(--purple-pale);}
+.arch-lbl{font-size:11px;font-weight:500;color:var(--text);text-align:center;line-height:1.3;}
+.arch-sub{font-size:10px;color:var(--text-light);text-align:center;line-height:1.3;}
+.arch-arr{display:flex;align-items:center;color:#CBD5E0;font-size:16px;padding-top:12px;}
+.footer{background:var(--navy);color:white;padding:44px 40px;margin-top:80px;}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px;}
+.footer-left h3{font-family:'DM Serif Display',serif;font-size:21px;font-weight:400;margin-bottom:5px;}
+.footer-left p{font-size:13px;color:rgba(255,255,255,.5);}
+.footer-links{display:flex;gap:9px;flex-wrap:wrap;}
+.fl-t{display:inline-flex;align-items:center;gap:6px;padding:9px 17px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;background:var(--teal);color:var(--navy);transition:opacity .15s;}
+.fl-o{display:inline-flex;align-items:center;gap:6px;padding:9px 17px;border-radius:8px;font-size:12px;font-weight:500;text-decoration:none;background:transparent;color:white;border:1px solid rgba(255,255,255,.22);transition:opacity .15s;}
+.fl-t:hover,.fl-o:hover{opacity:.82;}
+.icon{width:15px;height:15px;flex-shrink:0;}
+@media(max-width:640px){.hero-inner,.main,.footer{padding-left:20px;padding-right:20px;}.nav-inner{padding:0 12px;}.pcard-head,.pcard-body{padding-left:18px;padding-right:18px;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-inner">
+  <div class="hero-tag">Response to UNU-INWEH — Longlist Notification · May 2026</div>
+  <h1>Cristian Camilo<br>Castañeda <em>Rodríguez</em></h1>
+  <p class="hero-sub">GIS Analyst &amp; Geospatial Developer · 10+ years building production geospatial and AI systems for UN agencies, national cadastral programs, and public institutions across Colombia.</p>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-num">12</span><span class="hstat-lbl">Years UNODC Danet running live</span></div>
+    <div class="hstat"><span class="hstat-num">2,800+</span><span class="hstat-lbl">CVs processed via AI-powered ATS</span></div>
+    <div class="hstat"><span class="hstat-num">400+</span><span class="hstat-lbl">Field professionals selected &amp; deployed</span></div>
+    <div class="hstat"><span class="hstat-num">50%</span><span class="hstat-lbl">Program co-financing secured via data platform</span></div>
+    <div class="hstat"><span class="hstat-num">180+</span><span class="hstat-lbl">Field operators coordinated across Colombia</span></div>
+  </div>
+  <div class="hero-meta">
+    <div class="hm-item"><span class="hm-lbl">Position</span><span class="hm-val">Geospatial Application &amp; Data Analytics Associate (PSA5)</span></div>
+    <div class="hm-item"><span class="hm-lbl">Location</span><span class="hm-val">Niagara Falls, ON, Canada</span></div>
+    <div class="hm-item"><span class="hm-lbl">Email</span><span class="hm-val">ccamilocr@gmail.com</span></div>
+  </div>
+  <div class="hero-links">
+    <a href="https://ccamilocr.github.io/Cristian_Camilo_Castaneda_R/" target="_blank" class="btn-p">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20"/></svg>Full Portfolio
+    </a>
+    <a href="https://github.com/ccamilocr" target="_blank" class="btn-o">
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/ccamilocr" target="_blank" class="btn-o">LinkedIn</a>
+  </div>
+</div>
+</section>
+
+<nav class="nav-sticky">
+<div class="nav-inner">
+  <a class="nav-item active" href="#geo"><span class="nav-num">1</span> GIS &amp; Geospatial</a>
+  <a class="nav-item" href="#web"><span class="nav-num">2</span> Web &amp; Full-Stack</a>
+  <a class="nav-item" href="#cloud"><span class="nav-num">3</span> Cloud &amp; Infra</a>
+  <a class="nav-item" href="#devops"><span class="nav-num">4</span> Version Control</a>
+  <a class="nav-item" href="#cms"><span class="nav-num">5</span> CMS</a>
+  <a class="nav-item" href="#lms"><span class="nav-num">6</span> LMS</a>
+  <a class="nav-item" href="#ict"><span class="nav-num">7</span> ICT</a>
+</div>
+</nav>
+
+<main class="main">
+
+<!-- 1 GIS -->
+<section class="section" id="geo">
+<div class="section-header">
+  <div class="sec-icon si-teal"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">01 / 07</div>
+    <h2 class="sec-title">Geospatial &amp; GIS Experience</h2>
+    <p class="sec-desc">Production geospatial applications, Leaflet &amp; ArcGIS interactive maps, spatial databases, remote sensing algorithms, and national-scale cadastral platforms.</p>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-slate">UNODC Colombia · 2012–present</span><span class="badge b-live">Live since 2014</span></div>
+    <h3 class="pcard-title">UNODC Danet — Geospatial Decision Support &amp; Project Repository Platform</h3>
+    <p class="pcard-org">United Nations Office on Drugs and Crime · Alternative Development Program</p>
+  </div>
+  <div class="pcard-body">
+    <div class="hq">
+      <div class="hq-lbl">Strategic Impact</div>
+      <p>By keeping program data continuously accessible and visually navigable, Danet enabled teams to demonstrate real-time evidence to Colombia's Presidency — directly securing co-financing that covered <strong>50% of project costs</strong> for several years and funded the hiring of developers and multidisciplinary professionals who expanded the program beyond what documents alone could have conveyed.</p>
+    </div>
+    <p class="pcard-desc">Conceptualized, built, and maintained a web-based geospatial information portal for UNODC Colombia's alternative development program. The system has been live since 2014 — over 12 years — built entirely on open-source software (PostgreSQL, Leaflet, PHP, Apache). It serves as an institutional repository linking each project to geographic, financial, and operational data with interactive maps and control dashboards.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Lead Developer &amp; Architect — full-cycle ownership from relational database design to deployment and 12-year maintenance. Solo technical lead for the platform over 7 years at UNODC.</div>
+    </div>
+    <ul class="bullets">
+      <li>Designed the full relational data model in PostgreSQL — entities, relationships, constraints, and spatial extensions</li>
+      <li>Integrated interactive maps using Leaflet.js with thematic layers, filterable project locations, and spatial data visualization</li>
+      <li>Built control dashboards and report modules making program data accessible to decision-makers without technical backgrounds</li>
+      <li>Structured the platform as an institutional repository where each project's geographic, financial, and operational data was linked — converting documentation into strategic funding evidence</li>
+      <li>Built entirely on open-source technologies — PostgreSQL, Leaflet, PHP, Apache — zero licensing costs, full institutional control</li>
+      <li>12+ years of continuous operation with iterative improvements still ongoing</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Leaflet.js</span><span class="tech-tag">PHP</span><span class="tech-tag">Apache</span><span class="tech-tag">Spatial SQL</span><span class="tech-tag">JavaScript</span><span class="tech-tag">HTML5/CSS3</span><span class="tech-tag">Open Source Stack</span>
+    </div>
+    <div class="links-row">
+      <a href="https://danet.unodc.org.co/" target="_blank" class="lbtn lbtn-p">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>Live Platform (since 2014)
+      </a>
+      <a href="https://danet.unodc.org.co/Cooperacion_GIZ_visorgeo" target="_blank" class="lbtn lbtn-g">GIZ Geospatial Viewer</a>
+    </div>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-amber">UNDP / MinAmbiente · 2023–2024</span></div>
+    <h3 class="pcard-title">Burn Scar Monitoring Algorithm — Satellite Remote Sensing</h3>
+    <p class="pcard-org">United Nations Development Programme · Ministry of Environment Colombia</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">Python algorithm for automated detection and severity classification of forest fire burn scars using multi-temporal satellite imagery. Outputs feed an interactive ArcGIS Experience viewer for environmental policy analysis.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Developer — spectral index processing pipeline, burn severity classification, ArcGIS Experience viewer, GitHub repository management.</div>
+    </div>
+    <ul class="bullets">
+      <li>Multi-temporal satellite imagery processing with NDVI / NBR spectral indices for burn area delineation</li>
+      <li>Automated fire severity classification (low / moderate / high) published as cartographic layers</li>
+      <li>Interactive ArcGIS Experience viewer for stakeholder access and policy reporting</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">Python</span><span class="tech-tag">Remote Sensing</span><span class="tech-tag">NDVI / NBR</span><span class="tech-tag">ArcGIS Experience</span><span class="tech-tag">GitHub</span>
+    </div>
+    <div class="links-row">
+      <a href="https://github.com/ccamilocr/AlgoritmoMinAmbiente/tree/main" target="_blank" class="lbtn lbtn-p">GitHub Repository</a>
+      <a href="https://experience.arcgis.com/experience/fb52274236294685b0f3b39bf842483d/page/Portada/" target="_blank" class="lbtn lbtn-g">ArcGIS Viewer</a>
+    </div>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-teal">FAO Colombia · 2020–2026</span><span class="badge b-live">Live</span></div>
+    <h3 class="pcard-title">National Land Administration GIS Platform — KoboToolbox &amp; PostGIS</h3>
+    <p class="pcard-org">Food and Agriculture Organization · Land Tenure Program</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">National platform for Mass Cadastral Survey operations across multiple Colombian municipalities — field data collection, spatial QA/QC, and PostgreSQL/PostGIS geodatabases compliant with the LADM-COL national standard.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Architect, Lead Developer &amp; DBA — from requirements gathering through production deployment and training of 180+ field operators.</div>
+    </div>
+    <ul class="bullets">
+      <li>PostgreSQL/PostGIS geodatabase design with LADM-COL compliance and spatial QA/QC workflows</li>
+      <li>ETL pipelines in Python, FME, and Pentaho for multi-source data unification</li>
+      <li>Cartographic production with ArcGIS Pro and QGIS for cadastral, legal, and planning outputs</li>
+      <li>Published open spatial datasets and coordinated interoperability with IGAC (national geographic institute)</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">PostgreSQL/PostGIS</span><span class="tech-tag">ArcGIS Pro</span><span class="tech-tag">QGIS</span><span class="tech-tag">Python</span><span class="tech-tag">FME</span><span class="tech-tag">Pentaho</span><span class="tech-tag">LADM-COL</span>
+    </div>
+    <div class="links-row">
+      <a href="https://kf.kobotoolbox.fao.org.co/" target="_blank" class="lbtn lbtn-p">Live Platform</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 2 WEB -->
+<section class="section" id="web">
+<div class="section-header">
+  <div class="sec-icon si-amber"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">02 / 07</div>
+    <h2 class="sec-title">Web Applications &amp; Full-Stack Development</h2>
+    <p class="sec-desc">Production web applications built, deployed, and maintained — from digital transformation of paper processes to AI-powered platforms for UN field operations.</p>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-navy">IDPC Bogotá · 2020–present</span><span class="badge b-live">Live</span></div>
+    <h3 class="pcard-title">SISBIC — Digital Transformation of Cultural Heritage Management</h3>
+    <p class="pcard-org">Instituto Distrital de Patrimonio Cultural · City of Bogotá</p>
+  </div>
+  <div class="pcard-body">
+    <div class="hq">
+      <div class="hq-lbl">Transformation Impact</div>
+      <p>SISBIC replaced paper-based heritage inventory workflows with a fully automated digital system — turning weeks-long processes into same-day operations. The platform now interoperates with other city systems via REST services, <strong>effectively paying for itself</strong> through operational savings. The most recent upgrade integrated ESRI interactive maps and dashboards that streamlined internal approvals and enabled cross-system data sharing. Note: geographic layers require a Colombian VPN for access from outside Colombia.</p>
+    </div>
+    <p class="pcard-desc">Full-stack web platform for Bogotá's cultural heritage inventory management. Multi-year, multi-phase development project transforming the organization from paper forms to automated digital workflows, interactive geospatial visualization, and REST-based interoperability with other city systems.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Full-Stack Developer (part-time, multi-phase) — database architecture, backend API, frontend development, ESRI integration, REST service design, and process automation.</div>
+    </div>
+    <ul class="bullets">
+      <li>Designed and optimized the SISBIC PostgreSQL database with robust data integrity and spatial extensions</li>
+      <li>Developed and continuously maintained the full web platform through multiple technology upgrade phases</li>
+      <li>Integrated ESRI interactive maps and ArcGIS dashboards in the latest modernization phase</li>
+      <li>Exposed REST services for interoperability with other Bogotá city systems — enabling cross-platform data sharing without duplication</li>
+      <li>Automated internal approval and validation processes, converting multi-week turnarounds into same-day workflows</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">PHP / Laravel</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">ArcGIS / ESRI</span><span class="tech-tag">REST APIs</span><span class="tech-tag">HTML5/CSS3</span><span class="tech-tag">Process automation</span>
+    </div>
+    <div class="links-row">
+      <a href="https://sisbic.idpc.gov.co/" target="_blank" class="lbtn lbtn-p">Live Platform</a>
+      <span class="lbtn lbtn-g" style="cursor:default;opacity:.65;font-size:11px;">Geographic layers require Colombian VPN</span>
+    </div>
+  </div>
+</div>
+
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-teal">FAO Colombia · 2024–2026</span><span class="badge b-live">Live</span><span class="badge b-purple">AI Ecosystem</span></div>
+    <h3 class="pcard-title">FAO Colombia AI Ecosystem — Full-Stack AI Infrastructure for Field Operations</h3>
+    <p class="pcard-org">Food and Agriculture Organization · Land Tenure Program</p>
+  </div>
+  <div class="pcard-body">
+    <div class="hq">
+      <div class="hq-lbl">Strategic Innovation</div>
+      <p>This ecosystem gave FAO Colombia <strong>full AI autonomy</strong> — migrating from paid commercial APIs (OpenAI, Claude, DeepSeek) to locally hosted open-source models, eliminating recurring costs and enabling unlimited internal use. The crowning result: a custom AI-powered ATS that processed <strong>2,800+ CVs</strong> to select 400+ field professionals across Colombia, compressing weeks of manual screening into automated shortlisting — while every component ran on institutional infrastructure with no external data exposure.</p>
+    </div>
+    <p class="pcard-desc">Designed and deployed a complete AI development environment for FAO Colombia on a Linux Ubuntu production server. The ecosystem integrates open-source AI tools, automation workflows, field data capture, WhatsApp chatbot, meeting transcription, and an AI-powered recruitment system — all containerized and self-hosted for institutional data sovereignty.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Lead Developer &amp; Infrastructure Architect — designed the full stack, selected and integrated each component, managed Docker orchestration, and built the AI-powered ATS system end-to-end.</div>
+    </div>
+    <div class="arch">
+      <div class="arch-node">
+        <div class="arch-icon ai-p"><svg viewBox="0 0 24 24" fill="none" stroke="#5B42CC" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <span class="arch-lbl">Open WebUI</span><span class="arch-sub">AI chat interface</span>
+      </div>
+      <div class="arch-arr">→</div>
+      <div class="arch-node">
+        <div class="arch-icon ai-t"><svg viewBox="0 0 24 24" fill="none" stroke="#007A6E" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+        <span class="arch-lbl">Local LLMs</span><span class="arch-sub">Full AI autonomy</span>
+      </div>
+      <div class="arch-arr">→</div>
+      <div class="arch-node">
+        <div class="arch-icon ai-a"><svg viewBox="0 0 24 24" fill="none" stroke="#C47D0E" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.14h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16h.42z"/></svg></div>
+        <span class="arch-lbl">Evolution API</span><span class="arch-sub">WhatsApp chatbot</span>
+      </div>
+      <div class="arch-arr">→</div>
+      <div class="arch-node">
+        <div class="arch-icon ai-g"><svg viewBox="0 0 24 24" fill="none" stroke="#1A7F4B" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="arch-lbl">n8n</span><span class="arch-sub">AI agents &amp; workflows</span>
+      </div>
+      <div class="arch-arr">→</div>
+      <div class="arch-node">
+        <div class="arch-icon ai-t"><svg viewBox="0 0 24 24" fill="none" stroke="#007A6E" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <span class="arch-lbl">Whisper</span><span class="arch-sub">Meeting transcription</span>
+      </div>
+      <div class="arch-arr">→</div>
+      <div class="arch-node">
+        <div class="arch-icon ai-n"><svg viewBox="0 0 24 24" fill="none" stroke="#132240" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <span class="arch-lbl">AI ATS</span><span class="arch-sub">2,800+ CVs screened</span>
+      </div>
+    </div>
+    <ul class="bullets">
+      <li><strong>Open WebUI</strong> — AI chat environment for FAO staff to query institutional models without external API costs or data exposure</li>
+      <li><strong>Local LLMs</strong> — migrated from OpenAI/Claude/DeepSeek to locally hosted open-source models; FAO gains full AI autonomy and eliminates recurring API costs</li>
+      <li><strong>Evolution API</strong> — WhatsApp chatbot for field operator support, automating common queries from remote areas with limited connectivity</li>
+      <li><strong>n8n</strong> — AI agent workflows and automation pipelines connecting all ecosystem components, from data ingestion to notifications</li>
+      <li><strong>Whisper</strong> — automated transcription of strategic meetings, feeding summaries and KPI dashboards for executive decision-making</li>
+      <li><strong>KoboToolbox + OpenTenure</strong> — field data collection online and offline for cadastral and land tenure projects across Colombia</li>
+      <li><strong>AI-powered ATS</strong> — custom recruitment system that processed 2,800+ CVs to select 400+ field professionals across Colombia, automating shortlisting and reducing hiring cycles from weeks to days</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">React.js</span><span class="tech-tag">Node.js</span><span class="tech-tag">Open WebUI</span><span class="tech-tag">n8n</span><span class="tech-tag">Evolution API</span><span class="tech-tag">Whisper</span><span class="tech-tag">Local LLMs</span><span class="tech-tag">KoboToolbox</span><span class="tech-tag">OpenTenure</span><span class="tech-tag">REST APIs</span><span class="tech-tag">Docker</span><span class="tech-tag">Python</span>
+    </div>
+    <div class="links-row">
+      <a href="https://aiagent.fao.org.co/" target="_blank" class="lbtn lbtn-p">AI Agent FAO</a>
+      <a href="https://aichat.fao.org.co/" target="_blank" class="lbtn lbtn-g">AI Chat FAO</a>
+      <a href="https://kf.kobotoolbox.fao.org.co/" target="_blank" class="lbtn lbtn-g">KoboToolbox FAO</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 3 CLOUD -->
+<section class="section" id="cloud">
+<div class="section-header">
+  <div class="sec-icon si-navy"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">03 / 07</div>
+    <h2 class="sec-title">Cloud Infrastructure</h2>
+    <p class="sec-desc">Production server administration, Docker orchestration, and multi-service deployment for live UN programs — including a self-hosted AI ecosystem designed for institutional data sovereignty.</p>
+  </div>
+</div>
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-teal">FAO Colombia · 2020–2026</span><span class="badge b-live">Production</span></div>
+    <h3 class="pcard-title">FAO AI Ecosystem — Multi-Service Docker Infrastructure on Linux Ubuntu</h3>
+    <p class="pcard-org">Production server bpm01 · 20+ containerized services</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">Architected and administered the production server infrastructure for FAO Colombia's AI ecosystem — a Linux Ubuntu server running 20+ Docker containers orchestrated via Docker Compose, with Nginx reverse proxy, SSL termination, PostgreSQL/PostGIS, and automated backup workflows. All AI services, field platforms, and web applications in this portfolio run on this infrastructure.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Infrastructure Architect &amp; Server Administrator — provisioning, Docker orchestration, Nginx/SSL configuration, security hardening, monitoring, and ongoing maintenance for live UN production services.</div>
+    </div>
+    <div class="dgrid">
+      <div class="dcell"><div class="dcell-title"><div class="ddot dt"></div>Containerization</div><p>Docker Compose orchestrating Open WebUI, n8n, Evolution API, KoboToolbox, Whisper, OpenTenure, and PostgreSQL as isolated services with shared internal networking.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot da"></div>Reverse Proxy</div><p>Nginx handling SSL termination, subdomain routing (aiagent, aichat, kf.kobotoolbox), and traffic distribution across containers.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dg"></div>Data Layer</div><p>PostgreSQL/PostGIS with persistent Docker volumes, automated pg_dump backups via cron, and off-server storage for disaster recovery.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dn"></div>Cloud Platforms</div><p>Complementary experience with AWS, Google Cloud, and Azure for object storage, managed databases, and hybrid deployments.</p></div>
+    </div>
+    <div class="code-block">
+      <div class="code-lbl">Docker Compose — FAO Ecosystem (Illustrative)</div>
+      <pre><span class="ck">services:</span>
+  <span class="ck">open-webui:</span>   <span class="cv">image:</span> <span class="cs">ghcr.io/open-webui/open-webui:latest</span>
+  <span class="ck">n8n:</span>          <span class="cv">image:</span> <span class="cs">n8nio/n8n:latest</span>
+  <span class="ck">evolution-api:</span><span class="cv">image:</span> <span class="cs">atendai/evolution-api:latest</span>  <span class="cc"># WhatsApp</span>
+  <span class="ck">whisper:</span>      <span class="cv">image:</span> <span class="cs">onerahmet/openai-whisper-asr-webservice</span>
+  <span class="ck">kobotoolbox:</span>  <span class="cv">image:</span> <span class="cs">kobotoolbox/kpi:latest</span>
+  <span class="ck">postgres:</span>     <span class="cv">image:</span> <span class="cs">postgis/postgis:15-3.4</span>
+                <span class="cv">volumes:</span> [<span class="cs">pgdata:/var/lib/postgresql/data</span>]
+  <span class="ck">nginx:</span>        <span class="cv">ports:</span> [<span class="cs">"443:443"</span>]  <span class="cv">volumes:</span> [<span class="cs">./ssl:/etc/nginx/ssl</span>]</pre>
+    </div>
+    <div class="tech-row">
+      <span class="tech-tag">Docker / Docker Compose</span><span class="tech-tag">Linux Ubuntu</span><span class="tech-tag">Nginx</span><span class="tech-tag">SSL/TLS</span><span class="tech-tag">PostgreSQL/PostGIS</span><span class="tech-tag">AWS</span><span class="tech-tag">Google Cloud</span><span class="tech-tag">Azure</span>
+    </div>
+    <div class="links-row">
+      <a href="https://aiagent.fao.org.co/" target="_blank" class="lbtn lbtn-p">Live: AI Agent</a>
+      <a href="https://aichat.fao.org.co/" target="_blank" class="lbtn lbtn-g">AI Chat</a>
+      <a href="https://kf.kobotoolbox.fao.org.co/" target="_blank" class="lbtn lbtn-g">KoboToolbox</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 4 DEVOPS -->
+<section class="section" id="devops">
+<div class="section-header">
+  <div class="sec-icon si-green"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M15.4 6.6L8.6 13.4M15.4 17.4l-6.8-6.8"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">04 / 07</div>
+    <h2 class="sec-title">Version Control &amp; Deployment Workflows</h2>
+    <p class="sec-desc">Git-based development with structured branching, staged deployments, and automated backup protocols for production UN environments.</p>
+  </div>
+</div>
+<div class="pcard">
+  <div class="pcard-head">
+    <h3 class="pcard-title">Git / GitHub — Workflow &amp; Deployment Practices</h3>
+    <p class="pcard-org" style="margin-bottom:0">Applied across FAO, UNDP, IDPC · Private repos per institutional data governance policy</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">All development follows a structured Git workflow with feature branching, staged environments, and versioned releases. Institutional repositories are private per UN data governance requirements; a public example is available via the burn scar algorithm.</p>
+    <div class="dgrid">
+      <div class="dcell"><div class="dcell-title"><div class="ddot dt"></div>Branching</div><p>Feature branches per unit, pull requests before merging to <code style="font-family:'DM Mono',monospace;font-size:11px">main</code>. Hotfix branches for production patches.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot da"></div>Pipeline</div><p>Feature → review → staging → Docker rebuild → tagged release. Rollback via Docker image versioning.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dn"></div>Backup</div><p>Automated pg_dump cron jobs, Docker volume snapshots, environment configs in private repo with secrets management.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dg"></div>Security</div><p>No hardcoded credentials. Production deployments require tagged releases. Access via SSH keys and GitHub permissions.</p></div>
+    </div>
+    <div class="code-block">
+      <div class="code-lbl">Release Workflow</div>
+      <pre><span class="cc"># Feature development</span>
+git checkout -b <span class="cs">feature/ai-ats-cv-pipeline</span>
+git commit -m <span class="cs">"Add AI scoring for CV shortlisting"</span>
+
+<span class="cc"># After review — release</span>
+git checkout main && git merge <span class="cs">feature/ai-ats-cv-pipeline</span>
+git tag -a <span class="cs">v2.1.0</span> -m <span class="cs">"CV AI scoring pipeline"</span>
+docker-compose pull && docker-compose up -d --build</pre>
+    </div>
+    <div class="tech-row">
+      <span class="tech-tag">Git</span><span class="tech-tag">GitHub</span><span class="tech-tag">Docker versioning</span><span class="tech-tag">cron / pg_dump</span><span class="tech-tag">.env secrets</span><span class="tech-tag">SSH keys</span>
+    </div>
+    <div class="links-row">
+      <a href="https://github.com/ccamilocr" target="_blank" class="lbtn lbtn-p">GitHub Profile</a>
+      <a href="https://github.com/ccamilocr/AlgoritmoMinAmbiente" target="_blank" class="lbtn lbtn-g">Public Repo: Burn Scar Algorithm</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 5 CMS -->
+<section class="section" id="cms">
+<div class="section-header">
+  <div class="sec-icon si-purple"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">05 / 07</div>
+    <h2 class="sec-title">Content Management Systems (CMS)</h2>
+    <p class="sec-desc">Institutional web platforms developed and managed with structured content governance, dynamic geospatial modules, and multi-contributor workflows.</p>
+  </div>
+</div>
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-slate">UNODC · 2012–2019</span><span class="badge b-live">12 years live</span></div>
+    <h3 class="pcard-title">UNODC Danet — 7-Year Institutional Web Platform Management</h3>
+    <p class="pcard-org">Custom PHP-based CMS with geospatial module integration · Open-source stack</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">Managed and evolved UNODC Colombia's institutional web platform over seven years as sole technical owner — a content-driven repository serving program managers, government partners, and funding agencies. The content architecture linking projects to geographic and financial data was central to securing program co-financing.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Developer &amp; Content Manager — platform architecture, content governance, module development, user access management, and update cycles over 7 years.</div>
+    </div>
+    <ul class="bullets">
+      <li>Maintained content governance with structured update cycles and multi-contributor workflows for program staff</li>
+      <li>Integrated dynamic geospatial modules (Leaflet maps, dashboards) into the CMS framework</li>
+      <li>Managed user roles, access levels, and publication permissions across the platform</li>
+      <li>Built custom PHP modules for data-driven content pages linked to the PostgreSQL project repository</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">PHP</span><span class="tech-tag">Custom CMS</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Apache</span><span class="tech-tag">Leaflet.js</span><span class="tech-tag">JavaScript</span>
+    </div>
+    <div class="links-row">
+      <a href="https://danet.unodc.org.co/" target="_blank" class="lbtn lbtn-p">Live Portal (since 2014)</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 6 LMS -->
+<section class="section" id="lms">
+<div class="section-header">
+  <div class="sec-icon si-rose"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">06 / 07</div>
+    <h2 class="sec-title">LMS Management</h2>
+    <p class="sec-desc">Administration and training delivery for field data platforms serving 180+ distributed operators across Colombia.</p>
+  </div>
+</div>
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-teal">FAO Colombia · 2020–2026</span></div>
+    <h3 class="pcard-title">KoboToolbox Platform Administration — 180+ Field Operators</h3>
+    <p class="pcard-org">FAO Land Tenure Program · National Cadastral Survey Operations</p>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">Administered the FAO KoboToolbox instance as the primary field learning and data collection platform for 180+ cadastral operators distributed across multiple Colombian territories. Full ownership of platform configuration, user management, training content, and technical support.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Platform Administrator &amp; Trainer — user onboarding, form versioning, offline sync management, troubleshooting, and technical training for field users.</div>
+    </div>
+    <ul class="bullets">
+      <li>Managed accounts, roles, and project permissions for 180+ operators across multiple Colombian regions</li>
+      <li>Designed and versioned training forms with branching logic, validation rules, and multimedia guidance</li>
+      <li>Resolved offline synchronization conflicts and data submission issues in low-connectivity field environments</li>
+      <li>Delivered technical training adapted for non-technical field users in rural and remote areas</li>
+      <li>Monitored submission rates and data quality across municipalities in real time</li>
+    </ul>
+    <div class="tech-row">
+      <span class="tech-tag">KoboToolbox</span><span class="tech-tag">ODK / Aggregate</span><span class="tech-tag">Survey123</span><span class="tech-tag">OpenTenure</span><span class="tech-tag">Offline sync</span><span class="tech-tag">Form versioning</span>
+    </div>
+    <div class="links-row">
+      <a href="https://kf.kobotoolbox.fao.org.co/" target="_blank" class="lbtn lbtn-p">FAO KoboToolbox Platform</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 7 ICT -->
+<section class="section" id="ict">
+<div class="section-header">
+  <div class="sec-icon si-slate"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M2 8h20"/></svg></div>
+  <div class="sec-wrap">
+    <div class="sec-num">07 / 07</div>
+    <h2 class="sec-title">ICT / SharePoint Administration</h2>
+    <p class="sec-desc">Server administration, web services, access control, and workflow automation across multiple UN institutions and national agencies.</p>
+  </div>
+</div>
+<div class="pcard">
+  <div class="pcard-head">
+    <div class="badge-row"><span class="badge b-navy">FAO · UNDP · UNODC · IGAC</span></div>
+    <h3 class="pcard-title">Multi-Institutional ICT Administration — Servers, Access Control &amp; Workflow Automation</h3>
+  </div>
+  <div class="pcard-body">
+    <p class="pcard-desc">Extensive ICT administration across UN institutions and national agencies — including Linux and Windows server management, web server configuration (Apache, Nginx, IIS, Tomcat), role-based access control for distributed teams, and workflow automation using n8n (functionally equivalent to SharePoint Power Automate). While SharePoint-specific administration was managed at the institutional level, the transferable experience is directly applicable.</p>
+    <div class="role-block">
+      <div class="role-lbl">Exact Role &amp; Responsibilities</div>
+      <div class="role-txt">Server Administrator &amp; ICT Support — provisioning, web service configuration, user access management, backup automation, and workflow orchestration.</div>
+    </div>
+    <div class="dgrid">
+      <div class="dcell"><div class="dcell-title"><div class="ddot dt"></div>Web Servers</div><p>Apache, Nginx, IIS, and Tomcat configuration for multiple institutional applications with SSL, virtual hosts, and reverse proxy routing.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot da"></div>Workflow Automation</div><p>n8n automation for data routing, notifications, and API integrations — functionally equivalent to SharePoint Power Automate flows.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dn"></div>Access Control</div><p>Role-based permissions across KoboToolbox, ArcGIS Enterprise, PostgreSQL, and Linux servers at scale across distributed teams.</p></div>
+      <div class="dcell"><div class="dcell-title"><div class="ddot dg"></div>Collaborative Platforms</div><p>Document management, data sharing, and cross-institutional coordination under UN data governance and security requirements.</p></div>
+    </div>
+    <div class="tech-row">
+      <span class="tech-tag">Linux Ubuntu</span><span class="tech-tag">Apache / Nginx</span><span class="tech-tag">IIS / Tomcat</span><span class="tech-tag">n8n</span><span class="tech-tag">ArcGIS Enterprise</span><span class="tech-tag">PostgreSQL admin</span><span class="tech-tag">SSH / SSL</span>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-left">
+    <h3>Ready to contribute to UNU-INWEH</h3>
+    <p>GIS Analyst &amp; Geospatial Developer · Niagara Falls, ON, Canada · Available immediately</p>
+  </div>
+  <div class="footer-links">
+    <a href="https://ccamilocr.github.io/Cristian_Camilo_Castaneda_R/" target="_blank" class="fl-t">Full Portfolio</a>
+    <a href="mailto:ccamilocr@gmail.com" class="fl-o">ccamilocr@gmail.com</a>
+    <a href="https://github.com/ccamilocr" target="_blank" class="fl-o">GitHub</a>
+    <a href="https://www.linkedin.com/in/ccamilocr" target="_blank" class="fl-o">LinkedIn</a>
+  </div>
+</div>
+</footer>
+
+<script>
+const secs=['geo','web','cloud','devops','cms','lms','ict'];
+const navs=document.querySelectorAll('.nav-item');
+window.addEventListener('scroll',()=>{
+  let cur='geo';
+  secs.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-70)cur=id;});
+  navs.forEach(n=>n.classList.toggle('active',n.getAttribute('href')==='#'+cur));
+});
+</script>
+</body>
+</html>
