@@ -131,6 +131,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);
 .fl-o{display:inline-flex;align-items:center;gap:6px;padding:9px 17px;border-radius:8px;font-size:12px;font-weight:500;text-decoration:none;background:transparent;color:white;border:1px solid rgba(255,255,255,.22);transition:opacity .15s;}
 .fl-t:hover,.fl-o:hover{opacity:.82;}
 .icon{width:15px;height:15px;flex-shrink:0;}
+.img-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px;}
+.img-grid img{width:100%;border-radius:8px;object-fit:cover;aspect-ratio:4/3;background:#000;display:block;}
+.img-grid img:nth-child(3){grid-column:1/-1;aspect-ratio:16/5;}
+.img-caption{font-size:11px;color:var(--text-light);text-align:center;margin-top:-4px;margin-bottom:14px;font-family:'DM Mono',monospace;letter-spacing:.04em;}
 @media(max-width:640px){.hero-inner,.main,.footer{padding-left:20px;padding-right:20px;}.nav-inner{padding:0 12px;}.pcard-head,.pcard-body{padding-left:18px;padding-right:18px;}}
 </style>
 </head>
@@ -771,6 +775,13 @@ docker-compose pull && docker-compose up -d --build</pre>
       <li>Managed student enrollment, role assignment, and platform support throughout the course cycle</li>
       <li>Coordinated the academic research component across four groups (Geotopo, GITEM, Semillero Topocoors, ASEDT), contributing to the institutionalized research project registered in SICIUD</li>
     </ul>
+    <div class="img-grid">
+      <img src="images/lidar1.jpeg" alt="Point cloud — structure at Aduanilla de Paiba, Bogotá">
+      <img src="images/lidar2.jpeg" alt="Point cloud — tree canopy detail, Aduanilla de Paiba">
+      <img src="images/lidar3.jpeg" alt="Point cloud — tree row profile, Aduanilla de Paiba">
+      <img src="images/lidar4.jpeg" alt="Point cloud — individual tree, Aduanilla de Paiba">
+    </div>
+    <p class="img-caption">Point cloud outputs generated with OpenDroneMap · Practice site: Aduanilla de Paiba, Bogotá · Platform no longer online</p>
     <div class="tech-row">
       <span class="tech-tag">Moodle</span><span class="tech-tag">OpenDroneMap</span><span class="tech-tag">Linux Server</span><span class="tech-tag">Photogrammetry</span><span class="tech-tag">Point Cloud</span><span class="tech-tag">Course design</span><span class="tech-tag">SICIUD</span>
     </div>
